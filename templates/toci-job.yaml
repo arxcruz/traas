@@ -71,6 +71,7 @@ resources:
         echo export TRIPLEO_CI_REMOTE=\"$TRIPLEO_CI_REMOTE\" >> /etc/profile.d/traas.sh
         echo export TRIPLEO_CI_BRANCH=\"$TRIPLEO_CI_BRANCH\" >> /etc/profile.d/traas.sh
         echo export STABLE_RELEASE=\"$STABLE_RELEASE\" >> /etc/profile.d/traas.sh
+        echo export DELOREAN_LINK=\"$DELOREAN_LINK\" >> /etc/profile.d/traas.sh
         mkdir -p /etc/nodepool
         if [ ! -f /etc/nodepool/id_rsa ]; then
           ssh-keygen -t rsa -f /etc/nodepool/id_rsa
