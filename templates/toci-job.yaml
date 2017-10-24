@@ -49,6 +49,11 @@ parameters:
     default: 'master'
     description: Release to be used by quickstart --release option
 
+  delorean_link:
+    type: string
+    default: ''
+    description: Delorean link
+
 resources:
 
   TociJobUndercloudConfig:
@@ -97,6 +102,9 @@ resources:
         - name: STABLE_RELEASE
           type: String
           description: Release to be used by quickstart --release option
+        - name: DELOREAN_LINK
+          type: String
+          description: Delorean link
 
       outputs:
         - name: public_key
@@ -120,6 +128,7 @@ resources:
         TRIPLEO_CI_BRANCH: {get_param: tripleo_ci_branch}
         ZUUL_CHANGES: {get_param: zuul_changes}
         STABLE_RELEASE: {get_param: stable_release}
+        DELOREAN_LINK: {get_param: delorean_link}
 
   DisconnectFromHostHeat:
     type: OS::Heat::Value
@@ -219,6 +228,9 @@ resources:
         - name: STABLE_RELEASE
           type: String
           description: Branch to be used by quickstart --release option
+        - name: DELOREAN_LINK
+          type: String
+          description: Delorean link
 
   TociJobDeployment:
     type: OS::Heat::SoftwareDeployment
@@ -236,6 +248,7 @@ resources:
         TRIPLEO_CI_REMOTE: {get_param: tripleo_ci_remote}
         TRIPLEO_CI_BRANCH: {get_param: tripleo_ci_branch}
         STABLE_RELEASE: {get_param: stable_release}
+        DELOREAN_LINK: {get_param: delorean_link}
       signal_transport: NO_SIGNAL
 
 outputs:

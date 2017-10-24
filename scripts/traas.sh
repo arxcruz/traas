@@ -24,6 +24,7 @@ export TRIPLEO_CI_REMOTE=${TRIPLEO_CI_REMOTE:-https://github.com/slagle/tripleo-
 export TRIPLEO_CI_BRANCH=${TRIPLEO_CI_BRANCH:-traas}
 export EXTRA_VARS=${EXTRA_VARS:-""}
 export STABLE_RELEASE=${STABLE_RELEASE:-"master"}
+export DELOREAN_LINK=${DELOREAN_LINK:-""}
 
 EXTRA_VARS="$EXTRA_VARS --extra-vars vxlan_mtu=1400"
 

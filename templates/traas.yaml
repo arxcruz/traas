@@ -86,6 +86,11 @@ parameters:
     default: master
     description: Release to be used by --release quickstart option
 
+  delorean_link:
+    type: string
+    default: ''
+    description: Delorean link
+
 
 resources:
 
@@ -165,5 +170,6 @@ resources:
       tripleo_ci_branch: {get_param: tripleo_ci_branch}
       stable_release: {get_param: stable_release}
       traas_repository: {get_param: traas_repository}
+      delorean_link: {get_param: delorean_link}
 
 outputs:
